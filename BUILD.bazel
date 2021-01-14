@@ -2,6 +2,7 @@ load("@bazel_gazelle//:def.bzl", "gazelle")
 
 # gazelle:prefix github.com/be9/kopsexample
 
+# gazelle:resolve go k8s.io/kops/pkg/apis/kops @io_k8s_kops//pkg/apis/kops:go_default_library
 gazelle(name = "gazelle")
 
 # Useful commands:
