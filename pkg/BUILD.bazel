@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "pkg_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/be9/kopsexample/pkg",
+    visibility = ["//visibility:private"],
+    deps = ["@io_k8s_kops//pkg/apis/kops"],
+)
+
+go_binary(
+    name = "pkg",
+    embed = [":pkg_lib"],
+    visibility = ["//visibility:public"],
+)

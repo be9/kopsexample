@@ -1,0 +1,9 @@
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/be9/kopsexample
+
+gazelle(name = "gazelle")
+
+# Useful commands:
+#
+# bazel run //:gazelle -- update-repos -from_file=go.mod -prune=true -build_file_proto_mode=disable_global -to_macro=bzl/repositories.bzl%go_repositories

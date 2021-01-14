@@ -1,4 +1,4 @@
-module github/com/be9/kopsexample
+module github.com/be9/kopsexample
 
 go 1.15
 
