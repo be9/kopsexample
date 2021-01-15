@@ -3,11 +3,12 @@ package main
 import (
 	"fmt"
 
-	kopsapi "k8s.io/kops/pkg/apis/kops"
+	"k8s.io/kops/pkg/apis/kops"
+	"k8s.io/kops/upup/pkg/fi/cloudup"
 )
 
-var DefaultCluster = kopsapi.Cluster{}
+var DefaultCluster = kops.Cluster{}
 
 func main() {
-	fmt.Printf("cluster %v\n", DefaultCluster)
+	fmt.Printf("cluster %v. version %v\n", DefaultCluster, cloudup.OldestRecommendedKubernetesVersion)
 }

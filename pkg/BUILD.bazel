@@ -5,7 +5,10 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/be9/kopsexample/pkg",
     visibility = ["//visibility:private"],
-    deps = ["@io_k8s_kops//pkg/apis/kops:go_default_library"],
+    deps = [
+        "@io_k8s_kops//pkg/apis/kops:go_default_library",
+        "@io_k8s_kops//upup/pkg/fi/cloudup",
+    ],
 )
 
 go_binary(
