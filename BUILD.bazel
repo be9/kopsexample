@@ -1,8 +1,8 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
-# gazelle:prefix github.com/be9/kopsexample
+exports_files(["no_bindata_genrule.patch"])
 
-# gazelle:resolve go k8s.io/kops/pkg/apis/kops @io_k8s_kops//pkg/apis/kops:go_default_library
+# gazelle:prefix github.com/be9/kopsexample
 gazelle(name = "gazelle")
 
 # Useful commands:

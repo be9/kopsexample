@@ -424,6 +424,7 @@ def go_repositories():
     go_repository(
         name = "com_github_coreos_etcd",
         build_file_proto_mode = "disable_global",
+        build_file_generation = "on",
         importpath = "github.com/coreos/etcd",
         sum = "h1:f/Z3EoDSx1yjaIjLQGo1diYUlQYSBrrAQ5vP8NjwXwo=",
         version = "v3.3.17+incompatible",
@@ -2859,6 +2860,7 @@ def go_repositories():
         name = "io_k8s_kops",
         build_file_generation = "on",
         build_file_proto_mode = "disable_global",
+        patches = ["//:no_bindata_genrule.patch"],
         importpath = "k8s.io/kops",
         sum = "h1:1tezJm2XoTHvhMqnLZk50st5jeLDrqwHiKS/OesM2gA=",
         version = "v1.18.2",
