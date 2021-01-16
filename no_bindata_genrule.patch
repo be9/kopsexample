@@ -1,0 +1,31 @@
+--- upup/models/BUILD.bazel	2021-01-15 10:47:52.000000000 -0800
++++ upup/models/BUILD.bazel	2021-01-15 10:48:07.000000000 -0800
+@@ -11,28 +11,6 @@
+     deps = ["//util/pkg/vfs"],
+ )
+ 
+-genrule(
+-    name = "bindata",
+-    srcs = glob(
+-        [
+-            "cloudup/**",
+-            "nodeup/**",
+-        ],
+-    ),
+-    outs = ["bindata.go"],
+-    cmd = """
+-$(location //vendor/github.com/go-bindata/go-bindata/go-bindata:go-bindata) \
+-  -o "$(OUTS)" -pkg models \
+-  -nometadata \
+-  -nocompress \
+-  -prefix $$(pwd) \
+-  -prefix upup/models $(SRCS)
+-""",
+-    tools = [
+-        "//vendor/github.com/go-bindata/go-bindata/go-bindata",
+-    ],
+-)
+-
+ alias(
+     name = "go_default_library",
+     actual = ":models",
